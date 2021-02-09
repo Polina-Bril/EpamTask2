@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<candies xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://www.example.com/candies"
+	xsi:schemaLocation="http://www.example.com/candies candies.xsd">
+	<icicle-candy>
+		<name-id>Nyam-nyam</name-id>
+		<energy in="kkal">600</energy>
+		<production>Spartak</production>
+		<value in="gramm">
+			<proteins>100</proteins>
+			<fats>350</fats>
+			<carbohydrates>400</carbohydrates>
+		</value>
+		<ingredients in="mg">
+			<water>250</water>
+			<sugar>30</sugar>
+			<fructose>10</fructose>
+			<vanilin>5</vanilin>
+		</ingredients>
+		<expired-date>2020-10-01T13:40:00</expired-date>
+		<is-stuffed>true</is-stuffed>
+	</icicle-candy>
+
+	<chocolate-candy>
+		<name-id>Griliazh</name-id>
+		<energy in="kkal">800</energy>
+		<production>Komunarka</production>
+		<value in="gramm">
+			<proteins>100</proteins>
+			<fats>350</fats>
+			<carbohydrates>400</carbohydrates>
+		</value>
+		<ingredients in="mg">
+			<water>250</water>
+			<sugar>30</sugar>
+			<fructose>10</fructose>
+			<vanilin>5</vanilin>
+		</ingredients>
+		<expired-date>2020-10-01T13:40:00</expired-date>
+		<chocoType name="WHITE" />
+	</chocolate-candy>
+
+	<chocolate-candy>
+		<name-id>Truffel</name-id>
+		<energy in="kkal">750</energy>
+		<production>Roshen</production>
+		<value in="gramm">
+			<proteins>150</proteins>
+			<fats>400</fats>
+			<carbohydrates>10</carbohydrates>
+		</value>
+		<ingredients in="mg">
+			<water>100</water>
+			<sugar>50</sugar>
+		</ingredients>
+		<expired-date>2020-10-01T13:40:00</expired-date>
+		<chocoType name="DARK" />
+	</chocolate-candy>
+</candies>
