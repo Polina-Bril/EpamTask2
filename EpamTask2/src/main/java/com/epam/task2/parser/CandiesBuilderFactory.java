@@ -9,7 +9,7 @@ import com.epam.task2.exception.CandyException;
 public class CandiesBuilderFactory {
 	public static Logger logger = LogManager.getLogger();
 
-	private CandiesBuilderFactory() {
+	CandiesBuilderFactory() {
 	}
 
 	public static AbstractCandyBuilder createCandiesBuilder(String typeParser) throws CandyException {

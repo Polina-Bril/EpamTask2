@@ -15,25 +15,27 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.xml.sax.SAXException;
 
-public class ValidatorXml {
-		public static Logger logger = LogManager.getLogger();
+import com.epam.task2.handler.CandyErrorHandler;
 
-		public boolean validateXml(String filePath, String schemaPath) {
-			boolean isValid = true;
-			String language = XMLConstants.W3C_XML_SCHEMA_NS_URI;
-			SchemaFactory factory = SchemaFactory.newInstance(language);
-			try {
-				File schemaLocation = new File(schemaPath);
-				Schema schema = factory.newSchema(schemaLocation);
-				Validator validator = schema.newValidator();
-				Source source = new StreamSource(filePath);
-//				validator.setErrorHandler(new CandyErrorHandler());
-				validator.validate(source);
-				logger.log(Level.INFO, filePath + " is valid");
-			} catch (SAXException | IOException | NullPointerException e) {
-				logger.log(Level.ERROR, filePath + " is not correct or valid");
-				isValid = false;
-			}
-			return isValid;
+public class ValidatorXml {
+	public static Logger logger = LogManager.getLogger();
+
+	public boolean validateXml(String filePath, String schemaPath) {
+		boolean isValid = true;
+		String language = XMLConstants.W3C_XML_SCHEMA_NS_URI;
+		SchemaFactory factory = SchemaFactory.newInstance(language);
+		try {
+			File schemaLocation = new File(schemaPath);
+			Schema schema = factory.newSchema(schemaLocation);
+			Validator validator = schema.newValidator();
+			Source source = new StreamSource(filePath);
+			validator.setErrorHandler(new CandyErrorHandler());
+			validator.validate(source);
+			logger.log(Level.INFO, filePath + " is valid");
+		} catch (SAXException | IOException | NullPointerException e) {
+			logger.log(Level.ERROR, filePath + " is not correct or valid");
+			isValid = false;
 		}
+		return isValid;
 	}
+}

@@ -65,7 +65,7 @@ public class CandiesStaxBuilder extends AbstractCandyBuilder {
 		}
 	}
 
-	private Candy buildCandy(XMLStreamReader reader, String tagName) throws CandyException, XMLStreamException {
+	private Candy buildCandy(XMLStreamReader reader, String tagName) throws CandyException {
 		Candy candy = null;
 		switch (tagName) {
 		case "icicle-candy":
@@ -77,164 +77,161 @@ public class CandiesStaxBuilder extends AbstractCandyBuilder {
 		}
 		int type;
 		String name;
-		while (reader.hasNext()) {
-			type = reader.next();
-			switch (type) {
-			case XMLStreamConstants.START_ELEMENT:
-				name = reader.getLocalName();
-				switch (CandiesXmlTag.valueOf(name.replace(HYPHEN, UNDERSCORE).toUpperCase())) {
-				case NAME_ID:
-					candy.setName(getXMLText(reader));
-					break;
-				case ENERGY:
-					Integer energy = Integer.parseInt(getXMLText(reader));
-					candy.setEnergy(energy);
-					break;
-				case EXPIRED_DATE:
-					LocalDateTime expiringDate = LocalDateTime.parse(getXMLText(reader));
-					candy.setExpiredDate(expiringDate);
-					break;
-				case PRODUCTION:
-					candy.setProduction(getXMLText(reader));
-					break;
-				case VALUE:
-					Value value = buildValue(reader);
-					candy.setValue(value);
-					break;
-				case INGREDIENTS:
-					Ingredients ingredients = buildIngredients(reader);
-					candy.setIngredients(ingredients);
-					break;
-				case CHOCO_TYPE:
-					String chocoType = getXMLText(reader);
-					for (ChocoType th : ChocoType.values()) {
-						if (th.getType().equals(chocoType)) {
-							((ChocolateCandy) candy).setChocoType(th);
+		try {
+			while (reader.hasNext()) {
+				type = reader.next();
+				switch (type) {
+				case XMLStreamConstants.START_ELEMENT:
+					name = reader.getLocalName();
+					switch (CandiesXmlTag.valueOf(name.replace(HYPHEN, UNDERSCORE).toUpperCase())) {
+					case NAME_ID:
+						candy.setName(getXMLText(reader));
+						break;
+					case ENERGY:
+						Integer energy = Integer.parseInt(getXMLText(reader));
+						candy.setEnergy(energy);
+						break;
+					case EXPIRED_DATE:
+						LocalDateTime expiringDate = LocalDateTime.parse(getXMLText(reader));
+						candy.setExpiredDate(expiringDate);
+						break;
+					case PRODUCTION:
+						candy.setProduction(getXMLText(reader));
+						break;
+					case VALUE:
+						Value value = buildValue(reader);
+						candy.setValue(value);
+						break;
+					case INGREDIENTS:
+						Ingredients ingredients = buildIngredients(reader);
+						candy.setIngredients(ingredients);
+						break;
+					case CHOCO_TYPE:
+						String chocoType = getXMLText(reader);
+						for (ChocoType th : ChocoType.values()) {
+							if (th.getType().equals(chocoType)) {
+								((ChocolateCandy) candy).setChocoType(th);
+							}
 						}
+						break;
+					case IS_STUFFED:
+						Boolean isStuffed = Boolean.parseBoolean(getXMLText(reader));
+						((IcicleCandy) candy).setStuffed(isStuffed);
+						break;
+					default:
+						break;
 					}
 					break;
-				case IS_STUFFED:
-					Boolean isStuffed = Boolean.parseBoolean(getXMLText(reader));
-					((IcicleCandy) candy).setStuffed(isStuffed);
-					break;
-				case CANDIES:
-					break;
-				case CARBOHYDRATES:
-					break;
-				case CHOCOLATE_CANDY:
-					break;
-				case FATS:
-					break;
-				case FRUCTOSE:
-					break;
-				case ICICLE_CANDY:
-					break;
-				case PROTEINS:
-					break;
-				case SUGAR:
-					break;
-				case VANILIN:
-					break;
-				case WATER:
-					break;
-				default:
+				case XMLStreamConstants.END_ELEMENT:
+					name = reader.getLocalName();
+					if (name.equals(CandiesXmlTag.ICICLE_CANDY.getTag())
+							|| name.equals(CandiesXmlTag.CHOCOLATE_CANDY.getTag())) {
+						return candy;
+					}
 					break;
 				}
-				break;
-			case XMLStreamConstants.END_ELEMENT:
-				name = reader.getLocalName();
-				if (name.equals(CandiesXmlTag.ICICLE_CANDY.getTag())
-						|| name.equals(CandiesXmlTag.CHOCOLATE_CANDY.getTag())) {
-					return candy;
-				}
-				break;
 			}
+		} catch (XMLStreamException e) {
+			throw new CandyException("Unknown element in tag " + tagName);
 		}
 		throw new CandyException("Unknown element in tag " + tagName);
 	}
 
-	private Ingredients buildIngredients(XMLStreamReader reader) throws CandyException, XMLStreamException {
+	private Ingredients buildIngredients(XMLStreamReader reader) throws CandyException {
 		Ingredients ingredients = new Ingredients();
 		int type;
 		String name;
-		while (reader.hasNext()) {
-			type = reader.next();
-			switch (type) {
-			case XMLStreamConstants.START_ELEMENT:
-				name = reader.getLocalName();
-				switch (CandiesXmlTag.valueOf(name.replace(HYPHEN, UNDERSCORE).toUpperCase())) {
-				case FRUCTOSE:
-					Integer fructose = Integer.parseInt(getXMLText(reader));
-					ingredients.setFructose(fructose);
+		try {
+			while (reader.hasNext()) {
+				type = reader.next();
+				switch (type) {
+				case XMLStreamConstants.START_ELEMENT:
+					name = reader.getLocalName();
+					switch (CandiesXmlTag.valueOf(name.replace(HYPHEN, UNDERSCORE).toUpperCase())) {
+					case FRUCTOSE:
+						Integer fructose = Integer.parseInt(getXMLText(reader));
+						ingredients.setFructose(fructose);
+						break;
+					case SUGAR:
+						Integer sugar = Integer.parseInt(getXMLText(reader));
+						ingredients.setSugar(sugar);
+						break;
+					case VANILIN:
+						Integer vanilin = Integer.parseInt(getXMLText(reader));
+						ingredients.setVanillin(vanilin);
+						break;
+					case WATER:
+						Integer water = Integer.parseInt(getXMLText(reader));
+						ingredients.setWater(water);
+						break;
+					default:
+						break;
+					}
 					break;
-				case SUGAR:
-					Integer sugar = Integer.parseInt(getXMLText(reader));
-					ingredients.setSugar(sugar);
-					break;
-				case VANILIN:
-					Integer vanilin = Integer.parseInt(getXMLText(reader));
-					ingredients.setVanillin(vanilin);
-					break;
-				case WATER:
-					Integer water = Integer.parseInt(getXMLText(reader));
-					ingredients.setWater(water);
-					break;
-				default:
+				case XMLStreamConstants.END_ELEMENT:
+					name = reader.getLocalName();
+					if (name.equals(CandiesXmlTag.INGREDIENTS.getTag())) {
+						return ingredients;
+					}
 					break;
 				}
-				break;
-			case XMLStreamConstants.END_ELEMENT:
-				name = reader.getLocalName();
-				if (name.equals(CandiesXmlTag.INGREDIENTS.getTag())) {
-					return ingredients;
-				}
-				break;
 			}
+		} catch (XMLStreamException e) {
+			throw new CandyException("Unknown element in tag <ingredients>");
 		}
 		throw new CandyException("Unknown element in tag <ingredients>");
 	}
 
-	private Value buildValue(XMLStreamReader reader) throws XMLStreamException, CandyException {
+	private Value buildValue(XMLStreamReader reader) throws CandyException {
 		Value value = new Value();
 		int type;
 		String name;
-		while (reader.hasNext()) {
-			type = reader.next();
-			switch (type) {
-			case XMLStreamConstants.START_ELEMENT:
-				name = reader.getLocalName();
-				switch (CandiesXmlTag.valueOf(name.replace(HYPHEN, UNDERSCORE).toUpperCase())) {
-				case CARBOHYDRATES:
-					Integer carbohydrates = Integer.parseInt(getXMLText(reader));
-					value.setCarbohydrates(carbohydrates);
+		try {
+			while (reader.hasNext()) {
+				type = reader.next();
+				switch (type) {
+				case XMLStreamConstants.START_ELEMENT:
+					name = reader.getLocalName();
+					switch (CandiesXmlTag.valueOf(name.replace(HYPHEN, UNDERSCORE).toUpperCase())) {
+					case CARBOHYDRATES:
+						Integer carbohydrates = Integer.parseInt(getXMLText(reader));
+						value.setCarbohydrates(carbohydrates);
+						break;
+					case FATS:
+						Integer fats = Integer.parseInt(getXMLText(reader));
+						value.setFats(fats);
+						break;
+					case PROTEINS:
+						Integer proteins = Integer.parseInt(getXMLText(reader));
+						value.setProteins(proteins);
+						break;
+					default:
+						break;
+					}
 					break;
-				case FATS:
-					Integer fats = Integer.parseInt(getXMLText(reader));
-					value.setFats(fats);					
-					break;
-				case PROTEINS:
-					Integer proteins = Integer.parseInt(getXMLText(reader));
-					value.setProteins(proteins);
-					break;
-				default:
+				case XMLStreamConstants.END_ELEMENT:
+					name = reader.getLocalName();
+					if (name.equals(CandiesXmlTag.VALUE.getTag())) {
+						return value;
+					}
 					break;
 				}
-				break;
-			case XMLStreamConstants.END_ELEMENT:
-				name = reader.getLocalName();
-				if (name.equals(CandiesXmlTag.VALUE.getTag())) {
-					return value;
-				}
-				break;
 			}
+		} catch (XMLStreamException e) {
+			throw new CandyException("Unknown element in tag <value>");
 		}
 		throw new CandyException("Unknown element in tag <value>");
 	}
-	private String getXMLText(XMLStreamReader reader) throws XMLStreamException {
+
+	private String getXMLText(XMLStreamReader reader) throws CandyException {
 		String text = null;
-		if (reader.hasNext()) {
-			reader.next();
-			text = reader.getText();
+		try {
+			if (reader.hasNext()) {
+				reader.next();
+				text = reader.getText();
+			}
+		} catch (XMLStreamException e) {
+			throw new CandyException("Can't read the text");
 		}
 		return text;
 	}

@@ -56,4 +56,249 @@
 		<expired-date>2020-10-01T13:40:00</expired-date>
 		<chocoType name="DARK" />
 	</chocolate-candy>
+
+	<icicle-candy>
+		<name-id>Bdzhilka</name-id>
+		<energy in="kkal">100</energy>
+		<production>Spartak</production>
+		<value in="gramm">
+			<proteins>100</proteins>
+			<fats>350</fats>
+			<carbohydrates>400</carbohydrates>
+		</value>
+		<ingredients in="mg">
+			<water>100</water>
+			<sugar>30</sugar>
+			<fructose>10</fructose>
+		</ingredients>
+		<expired-date>2020-10-01T13:40:00</expired-date>
+		<is-stuffed>true</is-stuffed>
+	</icicle-candy>
+
+	<chocolate-candy>
+		<name-id>Korovka</name-id>
+		<energy in="kkal">750</energy>
+		<production>Komunarka</production>
+		<value in="gramm">
+			<proteins>100</proteins>
+			<fats>600</fats>
+			<carbohydrates>400</carbohydrates>
+		</value>
+		<ingredients in="mg">
+			<water>250</water>
+			<sugar>30</sugar>
+			<vanilin>5</vanilin>
+		</ingredients>
+		<expired-date>2020-10-01T13:40:00</expired-date>
+		<chocoType name="DARK" />
+	</chocolate-candy>
+
+	<icicle-candy>
+		<name-id>Vzletnaya</name-id>
+		<energy in="kkal">600</energy>
+		<production>Spartak</production>
+		<value in="gramm">
+			<proteins>100</proteins>
+			<fats>350</fats>
+			<carbohydrates>400</carbohydrates>
+		</value>
+		<ingredients in="mg">
+			<water>250</water>
+			<sugar>30</sugar>
+			<fructose>10</fructose>
+			<vanilin>5</vanilin>
+		</ingredients>
+		<expired-date>2020-10-01T13:40:00</expired-date>
+		<is-stuffed>false</is-stuffed>
+	</icicle-candy>
+
+	<chocolate-candy>
+		<name-id>Toffy</name-id>
+		<energy in="kkal">800</energy>
+		<production>Komunarka</production>
+		<value in="gramm">
+			<proteins>100</proteins>
+			<fats>350</fats>
+			<carbohydrates>400</carbohydrates>
+		</value>
+		<ingredients in="mg">
+			<water>250</water>
+			<sugar>30</sugar>
+			<fructose>10</fructose>
+			<vanilin>5</vanilin>
+		</ingredients>
+		<expired-date>2020-10-01T13:40:00</expired-date>
+		<chocoType name="MILK" />
+	</chocolate-candy>
+
+	<icicle-candy>
+		<name-id>ChupaChups</name-id>
+		<energy in="kkal">600</energy>
+		<production>Spartak</production>
+		<value in="gramm">
+			<proteins>100</proteins>
+			<fats>350</fats>
+			<carbohydrates>400</carbohydrates>
+		</value>
+		<ingredients in="mg">
+			<water>250</water>
+			<sugar>30</sugar>
+			<fructose>10</fructose>
+			<vanilin>5</vanilin>
+		</ingredients>
+		<expired-date>2020-10-01T13:40:00</expired-date>
+		<is-stuffed>true</is-stuffed>
+	</icicle-candy>
+
+	<chocolate-candy>
+		<name-id>Skushai</name-id>
+		<energy in="kkal">800</energy>
+		<production>Komunarka</production>
+		<value in="gramm">
+			<proteins>100</proteins>
+			<fats>350</fats>
+			<carbohydrates>400</carbohydrates>
+		</value>
+		<ingredients in="mg">
+			<water>250</water>
+			<sugar>30</sugar>
+			<fructose>10</fructose>
+			<vanilin>5</vanilin>
+		</ingredients>
+		<expired-date>2020-10-01T13:40:00</expired-date>
+		<chocoType name="WHITE" />
+	</chocolate-candy>
+
+	<icicle-candy>
+		<name-id>Ledenec</name-id>
+		<energy in="kkal">600</energy>
+		<production>Spartak</production>
+		<value in="gramm">
+			<proteins>100</proteins>
+			<fats>350</fats>
+			<carbohydrates>400</carbohydrates>
+		</value>
+		<ingredients in="mg">
+			<water>250</water>
+			<sugar>30</sugar>
+			<fructose>10</fructose>
+			<vanilin>5</vanilin>
+		</ingredients>
+		<expired-date>2020-10-01T13:40:00</expired-date>
+		<is-stuffed>true</is-stuffed>
+	</icicle-candy>
+
+	<chocolate-candy>
+		<name-id>Chak-chak</name-id>
+		<energy in="kkal">800</energy>
+		<production>Komunarka</production>
+		<value in="gramm">
+			<proteins>100</proteins>
+			<fats>350</fats>
+			<carbohydrates>400</carbohydrates>
+		</value>
+		<ingredients in="mg">
+			<water>250</water>
+			<sugar>30</sugar>
+			<fructose>10</fructose>
+			<vanilin>5</vanilin>
+		</ingredients>
+		<expired-date>2020-10-01T13:40:00</expired-date>
+		<chocoType name="WHITE" />
+	</chocolate-candy>
+
+	<icicle-candy>
+		<name-id>Iris</name-id>
+		<energy in="kkal">600</energy>
+		<production>Spartak</production>
+		<value in="gramm">
+			<proteins>100</proteins>
+			<fats>350</fats>
+			<carbohydrates>400</carbohydrates>
+		</value>
+		<ingredients in="mg">
+			<water>250</water>
+			<sugar>30</sugar>
+			<fructose>10</fructose>
+			<vanilin>5</vanilin>
+		</ingredients>
+		<expired-date>2020-10-01T13:40:00</expired-date>
+		<is-stuffed>true</is-stuffed>
+	</icicle-candy>
+
+	<chocolate-candy>
+		<name-id>BadBoy</name-id>
+		<energy in="kkal">800</energy>
+		<production>Komunarka</production>
+		<value in="gramm">
+			<proteins>100</proteins>
+			<fats>350</fats>
+			<carbohydrates>400</carbohydrates>
+		</value>
+		<ingredients in="mg">
+			<water>250</water>
+			<sugar>30</sugar>
+			<fructose>10</fructose>
+			<vanilin>5</vanilin>
+		</ingredients>
+		<expired-date>2020-10-01T13:40:00</expired-date>
+		<chocoType name="WHITE" />
+	</chocolate-candy>
+
+	<icicle-candy>
+		<name-id>Myata</name-id>
+		<energy in="kkal">600</energy>
+		<production>Spartak</production>
+		<value in="gramm">
+			<proteins>100</proteins>
+			<fats>350</fats>
+			<carbohydrates>400</carbohydrates>
+		</value>
+		<ingredients in="mg">
+			<water>250</water>
+			<sugar>30</sugar>
+			<fructose>10</fructose>
+			<vanilin>5</vanilin>
+		</ingredients>
+		<expired-date>2020-10-01T13:40:00</expired-date>
+		<is-stuffed>true</is-stuffed>
+	</icicle-candy>
+
+	<icicle-candy>
+		<name-id>Barbaris</name-id>
+		<energy in="kkal">600</energy>
+		<production>Spartak</production>
+		<value in="gramm">
+			<proteins>100</proteins>
+			<fats>350</fats>
+			<carbohydrates>400</carbohydrates>
+		</value>
+		<ingredients in="mg">
+			<water>250</water>
+			<sugar>30</sugar>
+			<fructose>10</fructose>
+			<vanilin>5</vanilin>
+		</ingredients>
+		<expired-date>2020-10-01T13:40:00</expired-date>
+		<is-stuffed>true</is-stuffed>
+	</icicle-candy>
+
+	<chocolate-candy>
+		<name-id>Alenka</name-id>
+		<energy in="kkal">800</energy>
+		<production>Komunarka</production>
+		<value in="gramm">
+			<proteins>100</proteins>
+			<fats>350</fats>
+			<carbohydrates>400</carbohydrates>
+		</value>
+		<ingredients in="mg">
+			<water>250</water>
+			<sugar>30</sugar>
+			<fructose>10</fructose>
+			<vanilin>5</vanilin>
+		</ingredients>
+		<expired-date>2020-10-01T13:40:00</expired-date>
+		<chocoType name="WHITE" />
+	</chocolate-candy>
 </candies>

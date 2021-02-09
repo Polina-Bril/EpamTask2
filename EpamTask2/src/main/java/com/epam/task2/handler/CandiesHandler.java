@@ -22,13 +22,8 @@ public class CandiesHandler extends DefaultHandler {
 	public static Logger logger = LogManager.getLogger();
 	private Set<Candy> candies;
 	private Candy currentCandy;
-//		private Deposit currentDeposit;
 	private CandiesXmlTag currentXmlTag;
 	private EnumSet<CandiesXmlTag> withText;
-//		private static final String ELEMENT_BANK = "bank";
-//		private static final String ELEMENT_REVOCABLE_DEPOSIT = "revocable-deposit";
-//		private static final String ELEMENT_IRREVOCABLE_DEPOSIT = "irrevocable-deposit";
-//		public final static String DEFAULT_ATTRIBUTE_COUNTRY = "Belarus";
 	public final static String HYPHEN = "-";
 	public final static String UNDERSCORE = "_";
 

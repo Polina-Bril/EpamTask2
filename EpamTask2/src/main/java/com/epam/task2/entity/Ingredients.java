@@ -9,6 +9,7 @@ public class Ingredients {
 	public Ingredients() {
 		super();
 	}
+
 	public Ingredients(int water, int sugar, int fructose, int vanillin) {
 		super();
 		this.water = water;
@@ -16,30 +17,52 @@ public class Ingredients {
 		this.fructose = fructose;
 		this.vanillin = vanillin;
 	}
+
+	public Ingredients(int water, int sugar, int fructose) {
+		super();
+		this.water = water;
+		this.sugar = sugar;
+		this.fructose = fructose;
+	}
+
+	public Ingredients(int water, int sugar) {
+		super();
+		this.water = water;
+		this.sugar = sugar;
+	}
+
 	public int getWater() {
 		return water;
 	}
+
 	public void setWater(int water) {
 		this.water = water;
 	}
+
 	public int getSugar() {
 		return sugar;
 	}
+
 	public void setSugar(int sugar) {
 		this.sugar = sugar;
 	}
+
 	public int getFructose() {
 		return fructose;
 	}
+
 	public void setFructose(int fructose) {
 		this.fructose = fructose;
 	}
+
 	public int getVanillin() {
 		return vanillin;
 	}
+
 	public void setVanillin(int vanillin) {
 		this.vanillin = vanillin;
 	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -50,6 +73,7 @@ public class Ingredients {
 		result = prime * result + water;
 		return result;
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -69,6 +93,7 @@ public class Ingredients {
 			return false;
 		return true;
 	}
+
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
